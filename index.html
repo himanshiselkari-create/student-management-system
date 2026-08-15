@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>EduManage | Student Management System</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- ================= SIDEBAR ================= -->
+
+  <aside class="sidebar" id="sidebar">
+
+    <div class="brand">
+
+      <div class="brand-icon">
+        <i class="fa-solid fa-graduation-cap"></i>
+      </div>
+
+      <div>
+        <h2>EduManage</h2>
+        <span>Admin Portal</span>
+      </div>
+
+    </div>
+
+
+    <nav>
+
+      <div class="nav-title">MAIN MENU</div>
+
+      <a href="#" class="nav-link active">
+        <i class="fa-solid fa-house"></i>
+        Dashboard
+      </a>
+
+      <a href="#studentsSection" class="nav-link">
+        <i class="fa-solid fa-user-graduate"></i>
+        Students
+      </a>
+
+      <a href="#coursesSection" class="nav-link">
+        <i class="fa-solid fa-book-open"></i>
+        Courses
+      </a>
+
+      <a href="#reportsSection" class="nav-link">
+        <i class="fa-solid fa-chart-column"></i>
+        Reports
+      </a>
+
+
+      <div class="nav-title system-title">
+        SYSTEM
+      </div>
+
+      <a href="#" class="nav-link" id="settingsBtn">
+        <i class="fa-solid fa-gear"></i>
+        Settings
+      </a>
+
+      <a href="#" class="nav-link" id="logoutBtn">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Logout
+      </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+      <div class="support-box">
+
+        <div class="support-icon">
+          <i class="fa-solid fa-headset"></i>
+        </div>
+
+        <strong>Need Help?</strong>
+
+        <p>
+          Manage your student records easily.
+        </p>
+
+      </div>
+
+
+      <div class="admin-profile">
+
+        <div class="avatar">
+          A
+        </div>
+
+        <div class="admin-details">
+
+          <strong>Administrator</strong>
+          <span>Admin Account</span>
+
+        </div>
+
+        <i class="fa-solid fa-ellipsis"></i>
+
+      </div>
+
+    </div>
+
+  </aside>
+
+
+  <!-- ================= MAIN ================= -->
+
+  <main class="main">
+
+    <!-- TOPBAR -->
+
+    <header class="topbar">
+
+      <button class="mobile-menu" id="mobileMenu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <div class="page-heading">
+
+        <h1>Dashboard</h1>
+
+        <p>
+          Manage your students and academic records.
+        </p>
+
+      </div>
+
+
+      <div class="top-actions">
+
+        <button
+          class="top-button"
+          id="themeToggle"
+          title="Dark Mode"
+        >
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <button
+          class="top-button notification"
+          title="Notifications"
+        >
+          <i class="fa-regular fa-bell"></i>
+          <span></span>
+        </button>
+
+
+        <div class="user-menu">
+
+          <div class="avatar">
+            A
+          </div>
+
+          <div>
+
+            <strong>Admin</strong>
+            <small>Administrator</small>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- ================= CONTENT ================= -->
+
+    <div class="content">
+
+
+      <!-- WELCOME -->
+
+      <div class="welcome-card">
+
+        <div>
+
+          <span class="welcome-label">
+            STUDENT MANAGEMENT
+          </span>
+
+          <h2>
+            Welcome back, Admin 👋
+          </h2>
+
+          <p>
+            Here's an overview of your student management system.
+          </p>
+
+        </div>
+
+        <div class="welcome-icon">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+
+      </div>
+
+
+      <!-- ================= STATISTICS ================= -->
+
+      <section class="stats-grid">
+
+        <div class="stat-card">
+
+          <div class="stat-info">
+
+            <span>Total Students</span>
+
+            <h2 id="totalStudents">
+              0
+            </h2>
+
+            <small>
+              <i class="fa-solid fa-users"></i>
+              All registered students
+            </small>
+
+          </div>
+
+          <div class="stat-icon purple">
+            <i class="fa-solid fa-user-graduate"></i>
+          </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+          <div class="stat-info">
+
+            <span>Total Courses</span>
+
+            <h2 id="totalCourses">
+              0
+            </h2>
+
+            <small>
+              <i class="fa-solid fa-book"></i>
+              Available courses
+            </small>
+
+          </div>
+
+          <div class="stat-icon blue">
+            <i class="fa-solid fa-book-open"></i>
+          </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+          <div class="stat-info">
+
+            <span>Active Students</span>
+
+            <h2 id="activeStudents">
+              0
+            </h2>
+
+            <small>
+              <i class="fa-solid fa-circle-check"></i>
+              Currently active
+            </small>
+
+          </div>
+
+          <div class="stat-icon green">
+            <i class="fa-solid fa-user-check"></i>
+          </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+          <div class="stat-info">
+
+            <span>Top Course</span>
+
+            <h2 id="topCourse">
+              -
+            </h2>
+
+            <small>
+              <i class="fa-solid fa-trophy"></i>
+              Most enrolled
+            </small>
+
+          </div>
+
+          <div class="stat-icon orange">
+            <i class="fa-solid fa-ranking-star"></i>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================= STUDENTS ================= -->
+
+      <section
+        class="panel"
+        id="studentsSection"
+      >
+
+        <div class="panel-header">
+
+          <div>
+
+            <h2>
+              Student Management
+            </h2>
+
+            <p>
+              Add, update, search and manage student records.
+            </p>
+
+          </div>
+
+
+          <div class="header-buttons">
+
+            <button
+              class="secondary-btn"
+              id="exportBtn"
+            >
+              <i class="fa-solid fa-download"></i>
+              Export CSV
+            </button>
+
+            <button
+              class="primary-btn"
+              id="addStudentBtn"
+            >
+              <i class="fa-solid fa-plus"></i>
+              Add Student
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- FILTER BAR -->
+
+        <div class="filter-bar">
+
+          <div class="search-wrapper">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+              type="text"
+              id="search"
+              placeholder="Search by name, email, course or phone..."
+            >
+
+          </div>
+
+
+          <select id="courseFilter">
+            <option value="all">
+              All Courses
+            </option>
+          </select>
+
+
+          <select id="statusFilter">
+
+            <option value="all">
+              All Status
+            </option>
+
+            <option value="Active">
+              Active
+            </option>
+
+            <option value="Inactive">
+              Inactive
+            </option>
+
+          </select>
+
+
+          <button
+            class="reset-btn"
+            id="resetFilters"
+            title="Reset Filters"
+          >
+            <i class="fa-solid fa-rotate-left"></i>
+          </button>
+
+        </div>
+
+
+        <!-- TABLE -->
+
+        <div class="table-container">
+
+          <table>
+
+            <thead>
+
+              <tr>
+
+                <th>STUDENT</th>
+
+                <th>EMAIL</th>
+
+                <th>PHONE</th>
+
+                <th>COURSE</th>
+
+                <th>ENROLLED</th>
+
+                <th>STATUS</th>
+
+                <th>ACTIONS</th>
+
+              </tr>
+
+            </thead>
+
+
+            <tbody id="studentList">
+
+            </tbody>
+
+          </table>
+
+
+          <!-- EMPTY -->
+
+          <div
+            class="empty-state"
+            id="emptyState"
+          >
+
+            <div class="empty-icon">
+
+              <i class="fa-solid fa-user-graduate"></i>
+
+            </div>
+
+            <h3>
+              No Students Found
+            </h3>
+
+            <p>
+              Start by adding your first student.
+            </p>
+
+            <button
+              class="primary-btn"
+              id="emptyAddBtn"
+            >
+              <i class="fa-solid fa-plus"></i>
+              Add Student
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- PAGINATION -->
+
+        <div class="pagination">
+
+          <span id="paginationInfo">
+            Showing 0 students
+          </span>
+
+          <div id="paginationButtons"></div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================= LOWER SECTION ================= -->
+
+      <div class="lower-grid">
+
+
+        <!-- COURSES -->
+
+        <section
+          class="panel"
+          id="coursesSection"
+        >
+
+          <div class="panel-header compact">
+
+            <div>
+
+              <h2>
+                Course Overview
+              </h2>
+
+              <p>
+                Student distribution by course.
+              </p>
+
+            </div>
+
+            <i class="fa-solid fa-chart-pie panel-icon"></i>
+
+          </div>
+
+
+          <div
+            id="courseStats"
+            class="course-list"
+          >
+
+          </div>
+
+        </section>
+
+
+        <!-- QUICK ACTIONS -->
+
+        <section
+          class="panel"
+          id="reportsSection"
+        >
+
+          <div class="panel-header compact">
+
+            <div>
+
+              <h2>
+                Quick Actions
+              </h2>
+
+              <p>
+                Frequently used actions.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="quick-actions">
+
+
+            <button
+              class="quick-action"
+              id="quickAdd"
+            >
+
+              <div class="quick-action-icon purple">
+                <i class="fa-solid fa-user-plus"></i>
+              </div>
+
+              <div>
+
+                <strong>
+                  Add Student
+                </strong>
+
+                <span>
+                  Create a new student record
+                </span>
+
+              </div>
+
+              <i class="fa-solid fa-chevron-right"></i>
+
+            </button>
+
+
+            <button
+              class="quick-action"
+              id="quickExport"
+            >
+
+              <div class="quick-action-icon blue">
+                <i class="fa-solid fa-file-export"></i>
+              </div>
+
+              <div>
+
+                <strong>
+                  Export Students
+                </strong>
+
+                <span>
+                  Download student records
+                </span>
+
+              </div>
+
+              <i class="fa-solid fa-chevron-right"></i>
+
+            </button>
+
+
+            <button
+              class="quick-action"
+              id="quickSearch"
+            >
+
+              <div class="quick-action-icon green">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+
+              <div>
+
+                <strong>
+                  Search Students
+                </strong>
+
+                <span>
+                  Find records quickly
+                </span>
+
+              </div>
+
+              <i class="fa-solid fa-chevron-right"></i>
+
+            </button>
+
+          </div>
+
+        </section>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+
+<!-- ================= ADD / EDIT MODAL ================= -->
+
+<div
+  class="modal-overlay"
+  id="studentModal"
+>
+
+  <div class="modal">
+
+    <div class="modal-header">
+
+      <div>
+
+        <h2 id="modalTitle">
+          Add New Student
+        </h2>
+
+        <p id="modalSubtitle">
+          Enter student information.
+        </p>
+
+      </div>
+
+      <button
+        class="close-btn"
+        id="closeStudentModal"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+    </div>
+
+
+    <form id="studentForm">
+
+
+      <div class="form-grid">
+
+
+        <div class="form-group full">
+
+          <label>
+            Full Name
+          </label>
+
+          <div class="input-box">
+
+            <i class="fa-regular fa-user"></i>
+
+            <input
+              type="text"
+              id="name"
+              placeholder="Enter full name"
+              required
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Email
+          </label>
+
+          <div class="input-box">
+
+            <i class="fa-regular fa-envelope"></i>
+
+            <input
+              type="email"
+              id="email"
+              placeholder="student@email.com"
+              required
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Phone
+          </label>
+
+          <div class="input-box">
+
+            <i class="fa-solid fa-phone"></i>
+
+            <input
+              type="tel"
+              id="phone"
+              placeholder="+91 9876543210"
+              required
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Course
+          </label>
+
+          <div class="input-box">
+
+            <i class="fa-solid fa-book-open"></i>
+
+            <input
+              type="text"
+              id="course"
+              placeholder="e.g. Full Stack Development"
+              required
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Status
+          </label>
+
+          <select id="status">
+
+            <option value="Active">
+              Active
+            </option>
+
+            <option value="Inactive">
+              Inactive
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="form-group full">
+
+          <label>
+            Enrollment Date
+          </label>
+
+          <div class="input-box">
+
+            <i class="fa-regular fa-calendar"></i>
+
+            <input
+              type="date"
+              id="enrollmentDate"
+              required
+            >
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="modal-actions">
+
+        <button
+          type="button"
+          class="secondary-btn"
+          id="cancelStudent"
+        >
+          Cancel
+        </button>
+
+        <button
+          type="submit"
+          class="primary-btn"
+          id="saveStudent"
+        >
+          <i class="fa-solid fa-plus"></i>
+          Add Student
+        </button>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+
+
+<!-- ================= VIEW PROFILE MODAL ================= -->
+
+<div
+  class="modal-overlay"
+  id="profileModal"
+>
+
+  <div class="modal profile-modal">
+
+    <div class="profile-cover"></div>
+
+
+    <button
+      class="profile-close"
+      id="closeProfile"
+    >
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+
+    <div class="profile-main">
+
+      <div
+        class="large-avatar"
+        id="profileAvatar"
+      >
+        A
+      </div>
+
+
+      <h2 id="profileName">
+        Student Name
+      </h2>
+
+      <span
+        class="profile-status"
+        id="profileStatus"
+      >
+        Active
+      </span>
+
+
+      <div class="profile-details">
+
+        <div>
+
+          <i class="fa-regular fa-envelope"></i>
+
+          <span id="profileEmail">
+            -
+          </span>
+
+        </div>
+
+
+        <div>
+
+          <i class="fa-solid fa-phone"></i>
+
+          <span id="profilePhone">
+            -
+          </span>
+
+        </div>
+
+
+        <div>
+
+          <i class="fa-solid fa-book"></i>
+
+          <span id="profileCourse">
+            -
+          </span>
+
+        </div>
+
+
+        <div>
+
+          <i class="fa-regular fa-calendar"></i>
+
+          <span id="profileDate">
+            -
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ================= DELETE MODAL ================= -->
+
+<div
+  class="modal-overlay"
+  id="deleteModal"
+>
+
+  <div class="delete-modal">
+
+    <div class="delete-icon">
+      <i class="fa-solid fa-trash"></i>
+    </div>
+
+    <h2>
+      Delete Student?
+    </h2>
+
+    <p>
+      This student record will be permanently deleted.
+      This action cannot be undone.
+    </p>
+
+
+    <div class="modal-actions">
+
+      <button
+        class="secondary-btn"
+        id="cancelDelete"
+      >
+        Cancel
+      </button>
+
+      <button
+        class="danger-btn"
+        id="confirmDelete"
+      >
+        <i class="fa-solid fa-trash"></i>
+        Delete
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+
+<div
+  class="toast"
+  id="toast"
+>
+
+  <div
+    class="toast-icon"
+    id="toastIcon"
+  >
+    <i class="fa-solid fa-check"></i>
+  </div>
+
+  <div>
+
+    <strong id="toastTitle">
+      Success
+    </strong>
+
+    <span id="toastMessage">
+      Operation completed.
+    </span>
+
+  </div>
+
+  <button id="closeToast">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1786804897228,
+    "name": "himu",
+    "email": "himanshi@gmail.com",
+    "phone": "9876543210",
+    "course": "Full Stack Development",
+    "status": "Active",
+    "enrollmentDate": "2026-08-15"
+  },
+  {
+    "id": 1786804931276,
+    "name": "piyu",
+    "email": "himanshi@gmail.com",
+    "phone": "9876543211",
+    "course": "Web Developer",
+    "status": "Active",
+    "enrollmentDate": "2026-08-15"
+  },
+  {
+    "id": 1786812975318,
+    "name": "Daduuu",
+    "email": "himanshi@gmail.com",
+    "phone": "1234567898",
+    "course": "full stack development",
+    "status": "Active",
+    "enrollmentDate": "2026-08-15"
+  }
+]
